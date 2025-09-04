@@ -91,7 +91,7 @@ function Register() {
             formData.longitude = longitude;
         }
     
-        const url = "https://on-road-vehicle-breakdown-assisstance.onrender.com/register";
+        const url = "http://localhost:5000/register";
         axios.post(url, formData)
             .then((res) => {
                 localStorage.setItem('token', res.data.token);  // Fixed the token storage

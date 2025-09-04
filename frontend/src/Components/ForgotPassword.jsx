@@ -9,7 +9,7 @@ const ForgotPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('https://on-road-vehicle-breakdown-assisstance.onrender.com/forgot-password', { email })
+    axios.post('http://localhost:5000/forgot-password', { email })
       .then(response => {
         setMessage(response.data.message); 
       })

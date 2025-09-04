@@ -15,7 +15,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission
 
-        const url = 'https://on-road-vehicle-breakdown-assisstance.onrender.com/login'; // Ensure your backend is configured correctly
+        const url = 'http://localhost:5000/login'; // Ensure your backend is configured correctly
         const data = { username: Username, password: Password, userType }; // Include userType in the payload
 
         try {

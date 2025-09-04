@@ -24,7 +24,7 @@ function ServiceRequest() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get('https://on-road-vehicle-breakdown-assisstance.onrender.com/user-info', {
+                const response = await axios.get('http://localhost:5000/user-info', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -62,7 +62,7 @@ function ServiceRequest() {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('https://on-road-vehicle-breakdown-assisstance.onrender.com/service-request', formData, {
+            const response = await axios.post('http://localhost:5000/service-request', formData, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

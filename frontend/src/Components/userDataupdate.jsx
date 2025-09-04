@@ -14,7 +14,7 @@ const UpdateProfile = () => {
 
   useEffect(() => {
     // Fetch the current user info to populate the form
-    axios.get('https://on-road-vehicle-breakdown-assisstance.onrender.com/user-info', {
+    axios.get('http://localhost:5000/user-info', {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
@@ -38,7 +38,7 @@ const UpdateProfile = () => {
     e.preventDefault();
     
     // Send the updated profile info to the server
-    axios.put(`https://on-road-vehicle-breakdown-assisstance.onrender.com/update-profile/${userInfo._id}`, userInfo, {
+    axios.put(`http://localhost:5000/update-profile/${userInfo._id}`, userInfo, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
