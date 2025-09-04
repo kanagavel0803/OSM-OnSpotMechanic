@@ -34,66 +34,13 @@ This MERN stack application helps users find mechanics near them when their vehi
 
 ## Technologies Used
 
-- **Frontend**: React.js, Material-UI
+- **Frontend**: React.js, 
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB (with Mongoose)
+- **Database**: Mysql
 - **Authentication**: JWT (JSON Web Token)
-- **Notifications**: Twilio SMS API (optional)
 - **State Management**: React hooks
-- **Styling**: CSS, Material-UI
+- **Styling**: CSS
 
-## Installation
-
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-username/vehicle-breakdown-assistance.git
-    cd vehicle-breakdown-assistance
-    ```
-
-2. **Install dependencies**:
-
-    - Backend:
-      ```bash
-      cd backend
-      npm install
-      ```
-
-    - Frontend:
-      ```bash
-      cd frontend
-      npm install
-      ```
-
-3. **Environment Variables**:
-
-   Create a `.env` file in the `backend` directory with the following environment variables:
-
-    ```bash
-    MONGO_URI=<Your MongoDB URI>
-    JWT_SECRET=<Your JWT Secret>
-    TWILIO_ACCOUNT_SID=<Your Twilio Account SID>
-    TWILIO_AUTH_TOKEN=<Your Twilio Auth Token>
-    TWILIO_PHONE_NUMBER=<Your Twilio Phone Number>
-    ```
-
-4. **Run the Application**:
-
-    - Backend:
-      ```bash
-      cd backend
-      npm start
-      ```
-
-    - Frontend:
-      ```bash
-      cd frontend
-      npm start
-      ```
-
-5. **Access the app**:
-
-   - Frontend: `http://localhost:3000`
-   - Backend API: `http://localhost:5000`
 
 ## Usage
 
@@ -102,9 +49,7 @@ This MERN stack application helps users find mechanics near them when their vehi
 3. **Customer Features**: Customers can submit requests and track their mechanic.
 4. **Mechanic Features**: Mechanics can toggle availability, receive requests, and manage them via their dashboard.
 
-## Project Structure
 
-├── backend # Backend code (Node.js, Express.js) │ ├── controllers # Business logic for API routes │ ├── models # Mongoose models for MongoDB │ ├── routes # API routes for requests │ ├── middleware # Middleware for authentication │ └── server.js # Main entry point for the backend server ├── frontend # Frontend code (React.js) │ ├── src │ │ ├── components # Reusable React components (UI) │ │ ├── pages # React pages for different routes │ │ ├── hooks # Custom React hooks │ │ └── utils # Helper functions ├── .gitignore # Files and directories to be ignored by Git ├── README.md # Project documentation └── package.json # Dependencies and project scripts
 
 
 
@@ -134,13 +79,29 @@ Contributions are welcome! To contribute:
     ```
 5. Open a pull request.
 
-## License
+# OSM Backend (MySQL)
+Run:
+1) Create DB and tables: import `schema.sql`
+2)  `.env` and fill values
+3) `npm install`
+4) `npm run dev`
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-- **Author**: Nageswarrao
-- **Email**: vnr235@gmail.com
+The API matches the original endpoints used by the frontend:
+- POST   /register
+- POST   /login
+- POST   /service-request
+- PUT    /service-request/approve/:id   (JWT: Mechanic)
+- PUT    /service-request/reject/:id    (JWT: Mechanic)
+- GET    /service-requests/user/:userId (Public)  — kept for compatibility
+- GET    /service-requests/user         (JWT: Customer)
+- GET    /mechanic/details              (JWT: Mechanic)
+- GET    /mechanic/status               (JWT: Mechanic)
+- PUT    /mechanic/update-status        (JWT: Mechanic)
+- GET    /user-info                     (JWT)
+- PUT    /user/update/:id               (JWT: Customer)
+- PUT    /mechanic/update/:id           (JWT: Mechanic)
+- DELETE /delete-profile/:id            (JWT: Owner)
+- POST   /forgot-password               (issue reset token; prints to server logs)
+- POST   /reset-password                (reset via token)
 
 
