@@ -18,9 +18,8 @@ This MERN stack application helps users find mechanics near them when their vehi
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
+
 
 ## Features
 
@@ -60,24 +59,7 @@ This MERN stack application helps users find mechanics near them when their vehi
 - **Review System**: Allow customers to rate and review mechanics.
 - **Push Notifications**: Add support for push notifications for mobile users.
 
-## Contributing
 
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new feature branch:
-    ```bash
-    git checkout -b feature-branch-name
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m "Add some feature"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature-branch-name
-    ```
-5. Open a pull request.
 
 # OSM Backend (MySQL)
 Run:
